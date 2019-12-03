@@ -231,6 +231,9 @@ let g:NERDToggleCheckAllLines = 1
 " These two lines will cause nerdtree ctrl + n and ,r not function
 nnoremap ; :
 nnoremap : ;
+nnoremap n nzzzv
+nnoremap N Nzzzv
+nnoremap <leader>z zMzvzz
 
 "====[ Make the 81st column stand out ]====================
 
