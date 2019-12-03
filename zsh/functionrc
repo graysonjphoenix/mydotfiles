@@ -1,0 +1,23 @@
+# convert utf to gbk
+function convert() {
+	for f in "$@"; do
+		if [ -f "$f" ]; then
+			iconv -s -c -f UTF8 -t GBK "$f" > /tmp/iconv.utf8.gbk.tmp
+			mv /tmp/iconv.utf8.gbk.tmp "$f"
+			echo "$f converted to GBK"
+		fi
+	done
+}
+
+# split file every n lines
+function sp() {
+	if [ $# -lt 3 ]; then
+			echo 'usage: sp 100 file_name new_file_name'
+	else
+		local LINES=$1
+		local FILE_NAME=$2
+		local NEW_FILE_NAME=$3
+		awk 'BEGIN{getline f;}NR%'$LINES'==2{x="'$NEW_FILE_NAME'"++i".csv";a[i]=x;print f>x;print x;}{print > x}' $FILE_NAME
+	fi
+}
+

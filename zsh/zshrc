@@ -1,0 +1,73 @@
+# Path to your oh-my-zsh installation.
+export ZSH=/Users/spring/.oh-my-zsh
+
+# Set name of the theme to load.
+# Look in ~/.oh-my-zsh/themes/
+# Optionally, if you set this to "random", it'll load a random theme each
+# time that oh-my-zsh is loaded.
+ZSH_THEME="robbyrussell"
+# ZSH_THEME="steeef"
+
+ZSH_DISABLE_COMPFIX=true
+
+# sensitive completion must be off. _ and - will be interchangeable.
+HYPHEN_INSENSITIVE="true"
+
+DISABLE_AUTO_UPDATE="true"
+
+# Uncomment the following line to disable auto-setting terminal title.
+# DISABLE_AUTO_TITLE="true"
+
+# Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
+plugins=(git z cp colored-man-pages zsh-autosuggestions)
+
+source $ZSH/oh-my-zsh.sh
+
+# Preferred editor for local and remote sessions
+if [[ -n $SSH_CONNECTION ]]; then
+  export EDITOR='vim'
+else
+  export EDITOR='mvim'
+fi
+setopt no_nomatch
+
+# Enable colors
+autoload -U colors && colors
+
+# History in cache directory:
+HISTSIZE=10000
+SAVEHIST=10000
+HISTFILE=~/.cache/zsh/history
+
+# Basic auto/tab complete:
+autoload -U compinit
+zstyle ':completion:*' menu select
+zmodload zsh/complist
+compinit
+_comp_options+=(globdots)		# Include hidden files.
+
+# Use vim keys in tab complete menu:
+bindkey -M menuselect 'h' vi-backward-char
+bindkey -M menuselect 'k' vi-up-line-or-history
+bindkey -M menuselect 'l' vi-forward-char
+bindkey -M menuselect 'j' vi-down-line-or-history
+
+# Use lf to switch directories and bind it to ctrl-o
+lfcd () {
+    tmp="$(mktemp)"
+    lf -last-dir-path="$tmp" "$@"
+    if [ -f "$tmp" ]; then
+        dir="$(cat "$tmp")"
+        rm -f "$tmp"
+        [ -d "$dir" ] && [ "$dir" != "$(pwd)" ] && cd "$dir"
+    fi
+}
+bindkey -s '^o' 'lfcd\n'
+
+# tabtab source for jhipster package
+# uninstall by removing these lines or running `tabtab uninstall jhipster`
+[[ -f /Users/spring/.config/yarn/global/node_modules/tabtab/.completions/jhipster.zsh ]] && . /Users/spring/.config/yarn/global/node_modules/tabtab/.completions/jhipster.zsh
+
+[ -f "$HOME/mydotfiles/zsh/aliasrc" ] && source "$HOME/mydotfiles/zsh/aliasrc"
+[ -f "$HOME/mydotfiles/zsh/pathrc" ] && source "$HOME/mydotfiles/zsh/pathrc"
+[ -f "$HOME/mydotfiles/zsh/functionrc" ] && source "$HOME/mydotfiles/zsh/functionrc"
