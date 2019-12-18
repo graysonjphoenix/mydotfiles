@@ -258,3 +258,7 @@ vnoremap <C-a> :call Incr()<CR>`
 
 set paste
 
+" gui font
+set macligatures
+set guifont=Operator\ Mono\ Lig:h16
+

@@ -21,3 +21,11 @@ function sp() {
 	fi
 }
 
+# ssh forword
+function ssh2() {
+    if [ $# -eq 0 ]; then
+        echo 'usage: ssh2 xxx.xxx.xxx.xxx(ip address)'
+    else
+        ssh -l hopdeploy -p 8022 -L 7777:$1:22 10.135.16.65 cat -
+    fi
+}
