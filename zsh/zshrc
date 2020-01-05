@@ -41,6 +41,14 @@ zmodload zsh/complist
 compinit
 _comp_options+=(globdots)		# Include hidden files.
 
+# Edit line in vim with ctrl-e:
+# Enable Ctrl-x-e to edit command line
+autoload -U edit-command-line
+# Emacs style
+zle -N edit-command-line
+bindkey '^xe' edit-command-line
+bindkey '^x^e' edit-command-line
+
 # Use vim keys in tab complete menu:
 bindkey -M menuselect 'h' vi-backward-char
 bindkey -M menuselect 'k' vi-up-line-or-history
@@ -58,10 +66,6 @@ lfcd () {
     fi
 }
 bindkey -s '^o' 'lfcd\n'
-
-# tabtab source for jhipster package
-# uninstall by removing these lines or running `tabtab uninstall jhipster`
-[[ -f /Users/spring/.config/yarn/global/node_modules/tabtab/.completions/jhipster.zsh ]] && . /Users/spring/.config/yarn/global/node_modules/tabtab/.completions/jhipster.zsh
 
 [ -f "$HOME/mydotfiles/zsh/aliasrc" ] && source "$HOME/mydotfiles/zsh/aliasrc"
 [ -f "$HOME/mydotfiles/zsh/pathrc" ] && source "$HOME/mydotfiles/zsh/pathrc"
