@@ -68,4 +68,5 @@ bindkey -s '^o' 'lfcd\n'
 
 [ -f "$HOME/mydotfiles/zsh/aliasrc" ] && source "$HOME/mydotfiles/zsh/aliasrc"
 [ -f "$HOME/mydotfiles/zsh/pathrc" ] && source "$HOME/mydotfiles/zsh/pathrc"
+[ -f "$HOME/mydotfiles/zsh/javarc" ] && source "$HOME/mydotfiles/zsh/javarc"
 [ -f "$HOME/mydotfiles/zsh/functionrc" ] && source "$HOME/mydotfiles/zsh/functionrc"
