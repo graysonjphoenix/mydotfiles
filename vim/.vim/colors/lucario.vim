@@ -15,7 +15,7 @@ endif
 let g:colors_name = "lucario"
 
 hi Cursor       cterm=NONE guifg=#2b3e50 guibg=#f8f8f2
-hi Visual       ctermfg=NONE ctermbg=16 cterm=NONE guifg=NONE guibg=#19242f gui=NONE
+hi Visual       ctermfg=60 ctermbg=236 cterm=NONE guifg=#ffff00 guibg=#198D4D gui=NONE
 hi CursorLine   ctermfg=NONE ctermbg=236 cterm=NONE guifg=NONE guibg=#405160 gui=NONE
 hi CursorColumn ctermfg=NONE ctermbg=236 cterm=NONE guifg=NONE guibg=#405160 gui=NONE
 hi ColorColumn  ctermfg=NONE ctermbg=59 cterm=NONE guifg=NONE guibg=#405160 gui=NONE
@@ -36,7 +36,7 @@ hi TabLineFill  ctermfg=12
 hi TabLine      ctermfg=17 ctermbg=11 cterm=NONE
 hi TabLineSel   ctermfg=8 ctermbg=14 cterm=NONE
 
-hi Normal       ctermfg=231 ctermbg=NONE cterm=NONE guifg=#f8f8f2 guibg=#2b3e50 gui=NONE
+hi Normal       ctermfg=231 ctermbg=NONE cterm=NONE guifg=#f6f3e8 guibg=#1D3252 gui=NONE
 hi Boolean      ctermfg=177 ctermbg=NONE cterm=NONE guifg=#ca94ff guibg=NONE gui=NONE
 hi Character    ctermfg=177 ctermbg=NONE cterm=NONE guifg=#ca94ff guibg=NONE gui=NONE
 hi Comment      ctermfg=44 ctermbg=NONE cterm=NONE guifg=#5c98cd guibg=NONE gui=NONE
