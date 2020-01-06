@@ -41,7 +41,6 @@ zmodload zsh/complist
 compinit
 _comp_options+=(globdots)		# Include hidden files.
 
-# Edit line in vim with ctrl-e:
 # Enable Ctrl-x-e to edit command line
 autoload -U edit-command-line
 # Emacs style

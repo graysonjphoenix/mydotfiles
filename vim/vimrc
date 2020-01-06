@@ -49,10 +49,10 @@ filetype plugin indent on    " required
 let mapleader = ","
 syntax enable
 set t_Co=256
-set background=dark
 " set background=light
-colorscheme lucario "github  " primary
 " colorscheme github
+colorscheme lucario
+set background=dark
 
 " tag bar
 nmap <F8> ;TagbarToggle<CR>
@@ -168,9 +168,6 @@ set wrap "Wrap lines
 " Set 7 lines to the cursor - when moving vertically using j/k
 set so=7
 
-" visual mode selection background
-hi Visual  guifg=White guibg=LightYellow gui=none
-hi Visual  cterm=bold ctermbg=LightGray ctermfg=White
 
 " YouCompleteMe
 set runtimepath+=~/mydotfiles/vim/.vim/bundle/youcompleteme
