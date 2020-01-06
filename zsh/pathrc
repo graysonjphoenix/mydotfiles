@@ -2,18 +2,13 @@
 export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
 
-#export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.7.0_79.jdk/Contents/Home
-export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0_212.jdk/Contents/Home
-export CLASSPATH=.:$JAVA_HOME/lib/dt.jar:$JAVA_HOME/lib/tools.jar
-export M2_HOME=/opt/apache-maven-3.6.1
-export GRADLE_HOME=/opt/gradle-3.2.1
 export AXIS_HOME=/opt/axis2-1.7.3
 export ANDROID_HOME=/Users/spring/Library/Android/sdk
 export ZK_HOME=/opt/zookeeper-3.4.14
 export REDIS_HOME=/opt/redis-3.2.9
 export NGROK=~/Applications/ngrok
 export GOOGLE_CLOUD_HOME=/opt/google-cloud-sdk
-export PATH=$GOOGLE_CLOUD_HOME/bin:$NGROK:$JAVA_HOME/bin:$M2_HOME/bin:$GRADLE_HOME/bin:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools:$AXIS_HOME/bin:/opt/mongodb-osx-x86_64-3.4.4/bin:$ZK_HOME/bin:$REDIS_HOME/src:/Applications/MacVim.app/Contents/bin:$PATH
+export PATH=$GOOGLE_CLOUD_HOME/bin:$NGROK:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools:$AXIS_HOME/bin:/opt/mongodb-osx-x102_64-3.4.4/bin:$ZK_HOME/bin:$REDIS_HOME/src:/Applications/MacVim.app/Contents/bin:$PATH
 # export EDITOR=subl
 export EDITOR=vim
 export PATH="/usr/local/sbin:$PATH:/usr/local/opt/inetutils/libexec/gnubin"
