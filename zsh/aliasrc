@@ -10,4 +10,4 @@ alias youtube-dl="youtube-dl -f bestvideo[ext=webm]+bestaudio[ext=webm]/best"
 alias connectDB='ssh -p 8022 -v -L38080:localhost:38080 hopdeploy@10.135.16.65  -t ssh -v -L38080:10.159.38.136:1521 fintech@10.138.8.204 cat -'
 alias csgDB='ssh -p 8022 -v -L33306:10.138.232.159:3310 hopdeploy@10.135.16.65'
 alias cTest='ssh -p 8022 -v -L11521:10.135.22.104:1521 hopdeploy@10.135.16.65'
-
+alias mlf='tmux split -h lf; lf'

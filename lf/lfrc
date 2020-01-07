@@ -20,6 +20,8 @@ set ifs "\n"
 # leave some space at the top and the bottom of the screen
 set scrolloff 10
 
+set incsearch true
+
 # use enter for shell commands
 map <enter> shell
 
@@ -56,13 +58,13 @@ map r push :rename<space>
 cmd trash %set -f; mv $fx ~/.trash
 
 # define a custom 'delete' command
-# cmd delete ${{
-#     set -f
-#     printf "$fx\n"
-#     printf "delete?[y/n]"
-#     read ans
-#     [ $ans = "y" ] && rm -rf $fx
-# }}
+cmd delete ${{
+    set -f
+    printf "$fx\n"
+    printf "delete?[y/n]"
+    read ans
+    [ $ans = "y" ] && rm -rf $fx
+}}
 
 # use '<delete>' key for either 'trash' or 'delete' command
 map <bs2> trash
@@ -76,8 +78,8 @@ cmd extract ${{
         *.tar.bz|*.tar.bz2|*.tbz|*.tbz2) tar xjvf $f;;
         *.tar.gz|*.tgz) tar xzvf $f;;
         *.tar.xz|*.txz) tar xJvf $f;;
-        *.zip) unzip $f;;
-        *.rar) unrar x $f;;
+        *.zip) unar $f;;
+        *.rar) unar x $f;;
         *.7z) 7z x $f;;
     esac
 }}
@@ -102,21 +104,38 @@ cmd zip ${{
     rm -rf $1
 }}
 
+map F $lf -remote "send $id select $(fzf)"
+map f $lf -remote "send $id select $(ls | fzf)"
+
+# paste with rsync
 cmd paste &{{
     load=$(lf -remote 'load')
     mode=$(echo "$load" | sed -n '1p')
     list=$(echo "$load" | sed '1d')
     if [ $mode = 'copy' ]; then
+				lf -remote 'send echo hello cp'
         rsync -av --ignore-existing --progress $list . \
         | stdbuf -i0 -o0 -e0 tr '\r' '\n' \
         | while read line; do
             lf -remote "send $id echo $line"
         done
     elif [ $mode = 'move' ]; then
+				lf -remote 'send echo hello mv'
         mv -n $list .
     fi
     lf -remote 'send load'
     lf -remote 'send clear'
+}}
+
+%{{
+    w=$(tput cols)
+    if [ $w -le 80 ]; then
+        lf -remote "send $id set ratios 1:2"
+    elif [ $w -le 160 ]; then
+        lf -remote "send $id set ratios 1:2:3"
+    else
+        lf -remote "send $id set ratios 1:2:3:5"
+    fi
 }}
 
 # set previewer

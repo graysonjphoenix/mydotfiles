@@ -128,7 +128,7 @@ autocmd FileType html setlocal wrap
 set paste
 
 " Maintain undo history between sessions
-set undofile 
+set undofile
 set undodir=~/mydotfiles/vim/.vim/undodir
 
 " after file changed, reload file
