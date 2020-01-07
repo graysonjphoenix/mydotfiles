@@ -11,6 +11,7 @@ case "$1" in
     *.png) exiftool "$1";;
     *.mp4) exiftool "$1";;
     *.mkv) exiftool "$1";;
+    *.webm) exiftool "$1";;
     *) highlight -O ansi "$1" || cat "$1";;
 esac
 
