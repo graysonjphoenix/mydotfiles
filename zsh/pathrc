@@ -8,10 +8,8 @@ export ZK_HOME=/opt/zookeeper-3.4.14
 export REDIS_HOME=/opt/redis-3.2.9
 export NGROK=~/Applications/ngrok
 export GOOGLE_CLOUD_HOME=/opt/google-cloud-sdk
-export PATH=$GOOGLE_CLOUD_HOME/bin:$NGROK:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools:$AXIS_HOME/bin:/opt/mongodb-osx-x86_64-3.4.4/bin:$ZK_HOME/bin:$REDIS_HOME/src:/Applications/MacVim.app/Contents/bin:$PATH
+export PATH=$GOOGLE_CLOUD_HOME/bin:$NGROK:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools:$AXIS_HOME/bin:/opt/mongodb-osx-x86_64-3.4.4/bin:$ZK_HOME/bin:$REDIS_HOME/src:$PATH
 export EDITOR=vim
 export PATH="/usr/local/sbin:$PATH:/usr/local/opt/inetutils/libexec/gnubin"
 export MANPATH="/usr/local/opt/inetutils/libexec/gnuman:$MANPATH"
-export NVM_DIR="$HOME/.nvm"
-. "/usr/local/opt/nvm/nvm.sh"
 
