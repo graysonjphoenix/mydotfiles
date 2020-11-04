@@ -29,3 +29,18 @@ function ssh2() {
         ssh -l hopdeploy -p 8022 -L 7777:$1:22 10.135.16.65 cat -
     fi
 }
+
+function zhangtao() {
+    echo 'zhangtao.dts@haier.com'
+    echo 'haier,123' | copy
+}
+
+function haibin() {
+    echo '13625321979@163.com'
+    echo 'luhaibin110' | copy
+}
+
+function jiasheng() {
+    echo '448309338@qq.com'
+    echo '789456123' | copy
+}
